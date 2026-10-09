@@ -4,18 +4,50 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="309.0" prefWidth="302.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="dev.rampmaster.pooejemplo1.HelloController">
+<VBox alignment="CENTER" prefHeight="309.0" prefWidth="435.0" spacing="20.0"
+      xmlns:fx="http://javafx.com/fxml"
+      xmlns="http://javafx.com/javafx/21"
+      fx:controller="dev.rampmaster.pooejemplo1.HelloController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
-   <children>
-      <Label text="Primer Numero" />
-      <TextField fx:id="numOne" />
-      <Label text="Segundo Numero" />
-      <TextField fx:id="numTwo" />
-      <Button mnemonicParsing="false" onAction="#onSumar" text="Sumar" />
-      <Button mnemonicParsing="false" onAction="#onRestar" text="Restar" />
-      <Label text="Resultado" />
-      <Label fx:id="resultLabel" />
-   </children>
+    <children>
+        <HBox spacing="10.0" alignment="CENTER">
+            <children>
+                <VBox HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                    <children>
+                        <Label text="Primer Numero"/>
+                        <TextField fx:id="numOne"/>
+                    </children>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                    <children>
+                        <Label text="Segundo Numero"/>
+                        <TextField fx:id="numTwo"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <HBox spacing="10.0" alignment="CENTER">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onSumar" text="Sumar"
+                        HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Button mnemonicParsing="false" onAction="#onRestar" text="Restar"
+                        HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Button mnemonicParsing="false" onAction="#onMultiplicar" text="Multiplicar"
+                        HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Button mnemonicParsing="false" onAction="#onDivision" text="Dividir"
+                        HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Button mnemonicParsing="false" onAction="#onModulo" text="Modulo"
+                        HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            </children>
+        </HBox>
+        <HBox spacing="10.0" alignment="CENTER">
+            <children>
+                <Label text="Resultado" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Label fx:id="resultLabel" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            </children>
+        </HBox>
+    </children>
 </VBox>

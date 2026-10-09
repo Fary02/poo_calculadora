@@ -27,4 +27,35 @@ public class HelloController {
         int resta = a - b;
         resultLabel.setText(resta+"");
     }
+
+    @FXML
+    protected void onMultiplicar(){
+        int a = Integer.parseInt(numOne.getText());
+        int b = Integer.parseInt(numTwo.getText());
+        int multiplicacion = a * b;
+        resultLabel.setText(multiplicacion+"");
+    }
+
+    @FXML
+    protected void onDivision(){
+        int a = Integer.parseInt(numOne.getText());
+        int b = Integer.parseInt(numTwo.getText());
+        String respuesta;
+        try{
+            int division = a / b;
+            respuesta = division+"";
+        }catch (ArithmeticException e){
+            respuesta = "No se puede dividir por cero "+e.getLocalizedMessage();
+        }
+
+        resultLabel.setText(respuesta);
+    }
+
+    @FXML
+    protected void onModulo(){
+        int a = Integer.parseInt(numOne.getText());
+        int b = Integer.parseInt(numTwo.getText());
+        int modulo = a%b;
+        resultLabel.setText(modulo+"");
+    }
 }
