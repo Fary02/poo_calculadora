@@ -1,8 +1,11 @@
-package dev.rampmaster.pooejemplo1;
+package dev.rampmaster.pooejemplo1.controller;
 
+import dev.rampmaster.pooejemplo1.Navegador;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 public class HelloController {
     @FXML
@@ -11,6 +14,10 @@ public class HelloController {
     private TextField numOne;
     @FXML
     private TextField numTwo;
+
+    public void inicializar(String texto){
+        System.out.println("Iniciando "+texto);
+    }
 
     @FXML
     protected void onSumar(){
@@ -57,5 +64,11 @@ public class HelloController {
         int b = Integer.parseInt(numTwo.getText());
         int modulo = a%b;
         resultLabel.setText(modulo+"");
+    }
+
+    @FXML
+    protected void onAbout() throws IOException {
+        AboutController controller = Navegador.navegar("about-view.fxml","Calculadora");
+        controller.inicializar("Acerca de: Esta aplicacion es de DSY1102");
     }
 }

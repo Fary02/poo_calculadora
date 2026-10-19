@@ -7,4 +7,6 @@ module dev.rampmaster.pooejemplo1 {
 
     opens dev.rampmaster.pooejemplo1 to javafx.fxml;
     exports dev.rampmaster.pooejemplo1;
+    exports dev.rampmaster.pooejemplo1.controller;
+    opens dev.rampmaster.pooejemplo1.controller to javafx.fxml;
 }

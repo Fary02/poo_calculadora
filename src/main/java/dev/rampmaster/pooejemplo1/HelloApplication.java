@@ -1,5 +1,6 @@
 package dev.rampmaster.pooejemplo1;
 
+import dev.rampmaster.pooejemplo1.controller.HelloController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,10 +11,11 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1024, 768);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
+        Navegador.setStage(stage);
+        stage.setMinWidth(600);
+        stage.setMinHeight(250);
+        HelloController controller = Navegador.navegar("hello-view.fxml","Calculadora");
+        controller.inicializar("Iniciando");
         stage.show();
     }
 }
